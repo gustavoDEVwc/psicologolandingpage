@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Política de Privacidade</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Literata:opsz,wght@7..72,400;7..72,500&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header"><div class="wrap header__in">
+    <a href="index.html" class="brand" data-cfg="nome"></a>
+    <a href="index.html" class="btn btn--sm btn--ghost">Voltar ao site</a>
+  </div></header>
+  <main class="doc"><div class="wrap narrow">
+    <h1>Política de Privacidade</h1>
+    <p class="note">Atualizada em <span data-cfg="privacidade.atualizadoEm"></span>. Em conformidade com a Lei Geral de Proteção de Dados (Lei 13.709/2018).</p>
+
+    <h2>1. Quem é o responsável</h2>
+    <p><strong data-cfg="nome"></strong>, <span data-cfg="titulo"></span> (<span data-cfg="crp"></span>), é a controladora dos dados tratados neste site. Contato: <a data-cfg="email" data-href="mailto"></a>.</p>
+
+    <h2>2. Quais dados coletamos</h2>
+    <ul>
+      <li>Nome, modalidade, tipo de consulta (primeira ou retorno), motivo e contexto que você escolher escrever, além do dia e horário desejados, informados no formulário de reserva.</li>
+      <li>Dados técnicos básicos de navegação (como tipo de navegador), caso o site use estatísticas de acesso.</li>
+    </ul>
+    <p>Pedimos que <strong>não envie dados sensíveis</strong> (diagnósticos, documentos, detalhes íntimos) pelo formulário. Esse conteúdo deve ser tratado apenas na sessão.</p>
+
+    <h2>3. Para que usamos</h2>
+    <ul>
+      <li>Organizar e confirmar o agendamento da consulta.</li>
+      <li>Responder dúvidas e entrar em contato sobre o atendimento.</li>
+    </ul>
+    <p>A base legal é a execução de procedimentos preliminares ao atendimento, a pedido do titular, e o seu consentimento ao enviar o formulário.</p>
+
+    <h2>4. Como o formulário funciona</h2>
+    <p>Este site não armazena as informações do formulário em servidor próprio. Ao enviar, o WhatsApp abre com a mensagem pronta e os dados seguem pelo aplicativo, que possui sua própria política de privacidade.</p>
+
+    <h2>5. Compartilhamento</h2>
+    <p>Não vendemos nem compartilhamos seus dados com terceiros para publicidade. Eles só são acessados pela profissional e, quando necessário, por prestadores essenciais (como o WhatsApp) ou por exigência legal.</p>
+
+    <h2>6. Sigilo profissional</h2>
+    <p>O conteúdo do atendimento é protegido pelo sigilo previsto no Código de Ética Profissional do Psicólogo e pelas normas do Conselho Federal de Psicologia.</p>
+
+    <h2>7. Por quanto tempo guardamos</h2>
+    <p>Mensagens de agendamento são mantidas pelo tempo necessário ao atendimento. Registros clínicos seguem os prazos de guarda definidos pelas normas do CFP.</p>
+
+    <h2>8. Seus direitos</h2>
+    <p>Você pode solicitar confirmação de tratamento, acesso, correção, anonimização, portabilidade, eliminação dos dados tratados com consentimento e revogação do consentimento, a qualquer momento, pelo e-mail acima.</p>
+
+    <h2>9. Cookies</h2>
+    <p>Este site não usa cookies de publicidade. Se ferramentas de análise forem ativadas, esta política será atualizada.</p>
+
+    <h2>10. Alterações</h2>
+    <p>Podemos atualizar esta política. A data da última revisão aparece no topo da página.</p>
+  </div></main>
+  <footer class="footer"><div class="wrap"><p>© <span id="ano"></span> <span data-cfg="nome"></span> · <span data-cfg="crp"></span></p></div></footer>
+  <script src="config.js"></script>
+  <script>
+    const S = window.SITE || {}; document.documentElement.dataset.theme = S.tema || 'salvia';
+    const get = (o, p) => p.split('.').reduce((a, k) => a?.[k], o);
+    document.querySelectorAll('[data-cfg]').forEach(el => { const v = get(S, el.dataset.cfg); if (!v) return; el.textContent = v; if (el.dataset.href === 'mailto') el.href = 'mailto:' + v; });
+    document.getElementById('ano').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
